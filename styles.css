@@ -1,0 +1,78 @@
+/* 
+off-white: #f5f5f5
+black text: #1F2937 
+purple background: #6943FF 
+purple border: B295FF
+*/
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  color: #1F2937;
+  background-color: #273549;
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 65%;
+    max-width: 650px;
+    min-width: 300px;
+    margin: 1.5rem auto;
+    /* font-size: 20px; */
+  }
+}
+
+/* phones */
+@media only screen and (max-width: 599px) {
+  html {
+    /* setting from password generator but it looks too big here. */
+    /* font-size: 20px; */
+  }
+  .container {
+    height: 100vh;
+/* added these just for design purposes.... */
+    height: 99vh;
+    margin: .25rem;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* temp */
+  border: 2px dotted lightskyblue;
+}
+
+.top-half {
+  background: #6943FF;
+  /* margin-bottom:1rem; */
+}
+
+.bottom-half {
+  background: #F4F4F4;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #f5f5f5;
+  width: 96%;
+  border: 2px dotted lightpink;
+}
+
+p {
+}
+
+#value-to-convert {
+  font-size:4rem;
+  font-weight: 900;
+  color: #f5f5f5;
+  width:100px;
+  border: 3px solid #B295FF;
+  border-radius: 5px;
+  padding:.4rem .8rem;
+}
