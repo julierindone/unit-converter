@@ -4,7 +4,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>Imperial/Metric Unit Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
@@ -12,19 +16,33 @@
 
 <body>
 
-  <div class="container">
-    <div class="top-half container">
-      <h1>Metric/Imperial Unit Conversion</h1>
-      <p id="value-to-convert">20</p>
-      <button id="convert-btn">Convert</button>
+  <div class="top-half">
+    <!-- <div class="top-half container"> -->
+    <h1>Imperial/Metric<br>Unit Converter</h1>
+    <h2>(It goes both ways.)</h2>
+    <p id="value-to-convert">40</p>
+    <button id="convert-btn">Convert</button>
+  </div>
+
+  <div class="bottom-half">
+
+    <div class="measurement-box">
+      <p class="unit-type">Length (Feet/Meters)</p>
+      <p class="output" id="length-el">20 meters = 65.616 feet<br>20 feet = 6.096 meters</p>
     </div>
-    <div class="bottom-half container">
-      <!-- measurements go here -->
+
+    <div class="measurement-box">
+      <p class="unit-type">Volume (Gallons/Liters)</p>
+      <p class="output" id="volume-el">20 liters = 5.284 gallons<br>20 gallons = 75.708 liters</p>
+    </div>
+
+    <div class="measurement-box">
+      <p class="unit-type">Mass (Pounds/Kilograms)</p>
+      <p class="output" id="mass-el">20 pounds = 5.284 kilograms<br>20 pounds = 75.708 kilograms</p>
     </div>
   </div>
 
-
-  <script src="" async defer></script>
+  <script src="index.js" async defer></script>
 </body>
 
 </html>
