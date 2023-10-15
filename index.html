@@ -19,8 +19,9 @@
   <div class="top-half">
     <!-- <div class="top-half container"> -->
     <h1>Imperial/Metric<br>Unit Converter</h1>
-    <h2>(It goes both ways.)</h2>
-    <p id="value-to-convert">40</p>
+    <h2>It goes both ways*<br>
+      (* but not yet)</h2>
+    <input type="text" id="value-to-convert">
     <button id="convert-btn">Convert</button>
   </div>
 
@@ -28,17 +29,17 @@
 
     <div class="measurement-box">
       <p class="unit-type">Length (Feet/Meters)</p>
-      <p class="output" id="length-el">20 meters = 65.616 feet<br>20 feet = 6.096 meters</p>
+      <div id="length-el"></div>
     </div>
 
     <div class="measurement-box">
       <p class="unit-type">Volume (Gallons/Liters)</p>
-      <p class="output" id="volume-el">20 liters = 5.284 gallons<br>20 gallons = 75.708 liters</p>
+      <div class="output" id="volume-el"></div>
     </div>
 
     <div class="measurement-box">
       <p class="unit-type">Mass (Pounds/Kilograms)</p>
-      <p class="output" id="mass-el">20 pounds = 5.284 kilograms<br>20 pounds = 75.708 kilograms</p>
+      <div class="output" id="mass-el"></div>
     </div>
   </div>
 
