@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Imperial/Metric Unit Converter</title>
+  <title>Bidirectional Imperial/Metric Converter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@400;500;700&display=swap"
     rel="stylesheet">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,33 +16,40 @@
 
 <body>
 
-  <div class="top-half">
-    <!-- <div class="top-half container"> -->
-    <h1>Imperial/Metric<br>Unit Converter</h1>
-    <h2>It goes both ways*<br>
-      (* but not yet)</h2>
-    <input type="text" id="value-to-convert">
-    <button id="convert-btn">Convert</button>
+  <div class="container">
+    <div class="top-half">
+      <h1>BiDirectional</h1>
+      <h2>UNIT CONVERTER</h2>
+      <h3>IT GOES BOTH WAYS:</h3>
+      <h4>IMPERIAL &#x21DA;&#x21DB; METRIC</h4>
+
+      <label class="input-sizer">
+        <input id="value-to-convert" type="text" size="2" onInput="this.parentNode.dataset.value = this.value">
+      </label>
+
+      <button id="convert-btn">Convert</button>
+    </div>
+
+    <div class="bottom-half">
+
+      <div class="measurement-box">
+        <p class="unit-type">Length (Feet/Meters)</p>
+        <div class="output" id="length-el"></div>
+      </div>
+
+      <div class="measurement-box">
+        <p class="unit-type">Volume (Gallons/Liters)</p>
+        <div class="output" id="volume-el"></div>
+      </div>
+
+      <div class="measurement-box">
+        <p class="unit-type">Mass (Pounds/Kilograms)</p>
+        <div class="output" id="mass-el"></div>
+      </div>
+    </div>
+    </label>
+
   </div>
-
-  <div class="bottom-half">
-
-    <div class="measurement-box">
-      <p class="unit-type">Length (Feet/Meters)</p>
-      <div id="length-el"></div>
-    </div>
-
-    <div class="measurement-box">
-      <p class="unit-type">Volume (Gallons/Liters)</p>
-      <div class="output" id="volume-el"></div>
-    </div>
-
-    <div class="measurement-box">
-      <p class="unit-type">Mass (Pounds/Kilograms)</p>
-      <div class="output" id="mass-el"></div>
-    </div>
-  </div>
-
   <script src="index.js" async defer></script>
 </body>
 
