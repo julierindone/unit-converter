@@ -22,6 +22,7 @@ body {
   background-image: linear-gradient(to right top,
       #f00a8c, #e10097, #ce00a2, #b700ad, #9b00b8, #8c00c1,
       #7808ca, #5d13d3, #541cdd, #4723e7, #332af2, #0231fc);
+  background-attachment: fixed
 }
 
 .top-half {
