@@ -16,6 +16,8 @@ body {
   color: #f5f5f5;
   background: #323232;
   text-align: center;
+  /* I can't figure out what's going on with the setting the height here. it stretches the background to 100% on ipad and a few others, but not on others. */
+  height: 100vh;
   margin: 0;
   background-image: linear-gradient(to right top,
       #f00a8c, #e10097, #ce00a2, #b700ad, #9b00b8, #8c00c1,
@@ -71,39 +73,23 @@ p {
   color: #f5f5f5;
   background: #111111;
   text-align: center;
-  font-weight: bold;
   font-size: 3rem;
   border-radius: 4px;
   border: 2px solid #f5f5f5;
-  padding: 3% unset;
+  padding: 1.5% 0;
   margin-top: 1.2rem;
   margin-bottom: .3rem;
 }
-
-.input-sizer {
-  display: inline-grid;
-  font-size: 3.5rem;
-  font-weight: bold;
-  
-
-  /* TODO: how to get rid of the stupid space below? */
-  &::after {
-    content: attr(data-value) '  ';
-    visibility: hidden;
-    white-space: pre-wrap;
-  }  
-}  
 
 button {
   font-family: inherit;
   color: #f5f5f5;
   background: #111111;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   border-radius: 4px;
-  margin: 0 auto;
-  padding: .6rem 3.5%;
-  margin-top: .2rem;
+  margin: .4rem auto 0 auto;
+  padding: .7rem 5%;
 }
 
 button:hover {
@@ -118,11 +104,10 @@ button:active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   gap: .7rem;
-  /* height: 60vh; */
-  /* hoping to get this to fit with no scrolling for most cell phones. maybe should be in a media query */
-  height: 58vh;
-  padding: 1rem 0;
+  height: 60vh;
+  padding: .5rem 0;
   margin: 0;
 }
 
@@ -151,7 +136,7 @@ div.measurement-box {
 
 /* #region media queries */
 
-/* @media only screen and (max-width: 399px) {
+@media only screen and (max-width: 399px) {
   html {
     font-size: 14px;
   }
@@ -160,15 +145,9 @@ div.measurement-box {
     font-size: 1.3;
   }
 }
- */
-/* I think I can get rid of this whole section. */
-/* @media only screen and (min-width: 400px) and (max-width: 499px) {
-  html {
-    font-size: 17px;
-  }
-} */
 
-@media only screen and (min-width: 475px) and (max-width: 949px) {
+
+ @media only screen and (min-width: 475px) and (max-width: 949px) {
   div.measurement-box {
     width: 80%;
   }
@@ -177,7 +156,7 @@ div.measurement-box {
 /* #endregion */
 
 /* #region*/
-/* wide */
+/* wide (unfinished) */
 @media only screen and (min-width: 900px) {
   html {
     position: absolute;

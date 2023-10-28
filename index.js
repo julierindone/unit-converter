@@ -12,43 +12,47 @@ convertbtn.addEventListener("click", function () {
 
 function validateInput() {
   console.log(`validate Input ${valueToConvert.value} and length is ${valueToConvert.value.length}`)
-  if (valueToConvert.value.length > 2) {
-    console.log(`${valueToConvert}'s length Is Greater than 2`)
-    alert("Your number is too large!");
+  if (valueToConvert.value.length > 12) {
+    alert(`Your number has too many digits.\nYou may only use up to 12 digits.`);
     valueToConvert.value = " "
     return false;
-  }
-  
-  else {
-    
+  } else {
     let inputNum = Number(valueToConvert.value)
-    console.log(`inputNum is ${inputNum}. Returning input now.`)
-    calculateConversions(inputNum)
+  
+    if (isNaN(inputNum)) {
+      alert(`You entry contains invalid characters.\nPlease enter a valid number.`)
+    } else {
+      calculateConversions(inputNum)
+    }
   }
-}
-function calculateConversions(inputNum) {
-  console.log(`inside the calcconversions, inputnumber is  ${inputNum}`)
 
-// //  each variable holds an array 
+  }
+
+
+
+function calculateConversions(num) {
+  inputNum = num
+  let measurements = []
+
+  // each variable holds an array 
   // [0] = imp to met, [1] = met to imp
-  let length = [(inputNum * 0.3048).toFixed(3), (inputNum / 0.3048).toFixed(3)]
-  let volume = [(inputNum * 3.785).toFixed(3), (inputNum / 3.785).toFixed(3)]
-  let mass = [(inputNum * 0.45359237).toFixed(3), (inputNum / 0.45359237).toFixed(3)]
+  let length = [(num / 3.28084).toFixed(3), (num * 3.28084).toFixed(3)]
+  let volume = [(num * 3.785).toFixed(3), (num / 3.785).toFixed(3)]
+  let mass = [(num * 0.45359237).toFixed(3), (num / 0.45359237).toFixed(3)]
 
-  console.log(length  + volume + mass)
+  measurements = [length, volume, mass]
 
-  printToScreen(length, volume, mass)
+  printToScreen(inputNum, measurements)
 }
 
-// WHY DOESNT THIS FUCKING WORK
-function printToScreen(length, volume, mass) {
-  // send to screen with innerHTML 
-  lengthEl.innerHTML = `<p class="output">${inputNum} feet = ${length[0]} meters
-  <br />${inputNum} meters = ${length[1]} feet</p>`
+// measurements are passed in as an array of arrays called 'amounts'
+function printToScreen(num, amounts) {
+  lengthEl.innerHTML = `<p class="output">${num} feet = ${amounts[0][0]} meters<br />
+  ${num} meters = ${amounts[0][1]} feet</p>`
 
-  volumeEl.innerHTML = `<p class="output">${inputNum} gallons = ${volume[0]} liters
-  <br />${inputNum} liters = ${volume[1]} gallons</p>`
+  volumeEl.innerHTML = `<p class="output">${num} gallons = ${amounts[1][0]} liters
+  <br />${num} liters = ${amounts[1][1]} gallons</p>`
 
-  massEl.innerHTML = `<p class="output">${inputNum} pounds = ${mass[0]} kilograms
-  <br />${inputNum} kilograms = ${mass[1]} pounds</p>`
+  massEl.innerHTML = `<p class="output">${num} pounds = ${amounts[2][0]} kilograms
+  <br />${num} kilograms = ${amounts[2][1]} pounds</p>`
 }

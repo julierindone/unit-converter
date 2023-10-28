@@ -16,40 +16,35 @@
 
 <body>
 
-  <div class="container">
-    <div class="top-half">
-      <h1>BiDirectional</h1>
-      <h2>UNIT CONVERTER</h2>
-      <h3>IT GOES BOTH WAYS:</h3>
-      <h4>IMPERIAL &#x21DA;&#x21DB; METRIC</h4>
+  <div class="top-half">
+    <h1>BiDirectional</h1>
+    <h2>UNIT CONVERTER</h2>
+    <h3>IT GOES BOTH WAYS:</h3>
+    <h4>IMPERIAL &#x21DA;&#x21DB; METRIC</h4>
 
-      <label class="input-sizer">
-        <input id="value-to-convert" type="text" size="2" onInput="this.parentNode.dataset.value = this.value">
-      </label>
+    <input id="value-to-convert" type="text" size="5" oninput="this.setAttribute('size',this.value.length||=1)">
 
-      <button id="convert-btn">Convert</button>
-    </div>
-
-    <div class="bottom-half">
-
-      <div class="measurement-box">
-        <p class="unit-type">Length (Feet/Meters)</p>
-        <div class="output" id="length-el"></div>
-      </div>
-
-      <div class="measurement-box">
-        <p class="unit-type">Volume (Gallons/Liters)</p>
-        <div class="output" id="volume-el"></div>
-      </div>
-
-      <div class="measurement-box">
-        <p class="unit-type">Mass (Pounds/Kilograms)</p>
-        <div class="output" id="mass-el"></div>
-      </div>
-    </div>
-    </label>
-
+    <button id="convert-btn">Convert</button>
   </div>
+
+  <div class="bottom-half">
+
+    <div class="measurement-box">
+      <p class="unit-type">Length (Feet/Meters)</p>
+      <div class="output" id="length-el"></div>
+    </div>
+
+    <div class="measurement-box">
+      <p class="unit-type">Volume (Gallons/Liters)</p>
+      <div class="output" id="volume-el"></div>
+    </div>
+
+    <div class="measurement-box">
+      <p class="unit-type">Mass (Pounds/Kilograms)</p>
+      <div class="output" id="mass-el"></div>
+    </div>
+  </div>
+  </label>
   <script src="index.js" async defer></script>
 </body>
 
