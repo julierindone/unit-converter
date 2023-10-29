@@ -16,8 +16,6 @@ body {
   color: #f5f5f5;
   background: #323232;
   text-align: center;
-  /* I can't figure out what's going on with the setting the height here. it stretches the background to 100% on ipad and a few others, but not on others. */
-  height: 100vh;
   margin: 0;
   background-image: linear-gradient(to right top,
       #f00a8c, #e10097, #ce00a2, #b700ad, #9b00b8, #8c00c1,
@@ -25,12 +23,21 @@ body {
   background-attachment: fixed
 }
 
+div.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .top-half {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  padding-top: 1.5rem;
-  padding-bottom: .5rem;
+  padding: 1rem 0 1rem 0;
+  min-height: 355px;
+  /* is this needed? should it just be height and not do a min max thing? not */
+  /* max-height:50%; */
 }
 
 h1,
@@ -38,36 +45,43 @@ h2,
 h3,
 h4 {
   color: #f5f5f5;
-  text-shadow: 1px 1px 1px #252525;
+  text-shadow: 2px 2px 2px #252525;
   margin: 0;
 }
 
 h1 {
   font-family: monoton, 'san serif';
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: normal;
+  font-size: 2.65rem;
   line-height: 1.1;
 }
 
 h2 {
   font-size: 2.1rem;
   font-weight: 600;
-  margin-top: .35rem;
+  margin-top: 0;
 }
 
 h3 {
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: 600;
   margin-top: 1rem;
-
+  font-weight: 600;
 }
 
 h4 {
   font-size: 1.9rem;
+  line-height: 1;
+  margin-top: .3rem;
 }
 
 p {
   margin: 0;
+}
+
+.converter-wrapper {
+  margin: auto;
+  width: 96%;
 }
 
 #value-to-convert {
@@ -76,29 +90,44 @@ p {
   text-align: center;
   font-size: 3rem;
   border-radius: 4px;
-  border: 2px solid #f5f5f5;
-  padding: 1.5% 0;
-  margin-top: 1.2rem;
-  margin-bottom: .3rem;
-}
+  border: 2px solid #ffffff;
+  padding: .75% 0;
+  margin: 1.2rem 0 0 0;
+  max-width: 98%;
 
-button {
-  font-family: inherit;
+}
+#convert-btn {
   color: #f5f5f5;
   background: #111111;
+  font-family: inherit;
   font-size: 1.25rem;
   font-weight: 600;
+  border: 2px solid #ffffff;
   border-radius: 4px;
-  margin: .4rem auto 0 auto;
-  padding: .7rem 5%;
+  margin: .3rem auto 0 auto;
+  padding: .6rem 5%;
+  box-shadow: 2px 2px 1px 1px #4f505073;
 }
 
-button:hover {
-  background: #222222;
+#convert-btn:hover {
+  background: #0b0b0b;
+  box-shadow: 2px 2px 2px 1px #313131ae;
+  transition: 0.4;
 }
 
-button:active {
-  transform: scale(.95);
+#convert-btn:active {
+  background: #000;
+  box-shadow: 1px 1px 1px 1px #313131ae;
+  transform: scale(.96);
+  transition: 0.5s;
+}
+
+#error-message {
+  color: #97e4f7;
+  font-size: 1rem;
+  text-shadow: 1px 1px 1px #000;
+  margin-top: .35rem;
+
 }
 
 .bottom-half {
@@ -107,49 +136,61 @@ button:active {
   align-items: center;
   justify-content: space-evenly;
   gap: .7rem;
-  height: 60vh;
-  padding: .5rem 0;
+  padding: .5rem 0 1rem 0;
   margin: 0;
+  height: auto;
+  position: relative;
+  flex: 1;
 }
 
-div.measurement-box {
+.measurement-box {
   display: flex;
   flex-direction: column;
   background: #111111;
   width: 94%;
+  max-width: 520px;
   height: 28%;
-  min-height: 100px;
-  padding: 2% 0;
+  min-height: 110px;
+  padding: 3% 0 0 0;
   justify-content: center;
 }
 
 .unit-type {
   font-size: 1.4rem;
   font-weight: 700;
-  padding-bottom: 3%;
+  padding-bottom: 1%;
 }
 
 .output {
   font-size: 1.2rem;
-  margin: 0;
   line-height: 1.5;
+  padding: 1%;
+  margin: 0;
 }
 
-/* #region media queries */
+/* media queries */
+/* #region */
 
+/* narrower phones */
 @media only screen and (max-width: 399px) {
   html {
     font-size: 14px;
   }
 
-  button {
-    font-size: 1.3;
+  .top-half {
+    min-height: 300px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .measurement-box {
+    max-height: 150px;
+    padding-top: 1%;
   }
 }
 
-
- @media only screen and (min-width: 475px) and (max-width: 949px) {
-  div.measurement-box {
     width: 80%;
   }
 }
