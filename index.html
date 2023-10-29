@@ -7,7 +7,7 @@
   <title>Bidirectional Imperial/Metric Converter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@400;500;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Rubik:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,35 +16,43 @@
 
 <body>
 
-  <div class="top-half">
-    <h1>BiDirectional</h1>
-    <h2>UNIT CONVERTER</h2>
-    <h3>IT GOES BOTH WAYS:</h3>
-    <h4>IMPERIAL &#x21DA;&#x21DB; METRIC</h4>
+  <div class="container">
+    <div class="top-half">
+      <div>
+        <h1>BiDirectional</h1>
+        <h2>UNIT CONVERTER</h2>
+      </div>
+      <div>
+        <h3>GOES BOTH WAYS:</h3>
+        <h4>IMPERIAL &#x21DA;&#x21DB; METRIC<br>
+          METRIC &#x21DA;&#x21DB; IMPERIAL</h4>
+        <!-- <h4>IMPERIAL &#x21DA;&#x21DB; METRIC</h4> -->
+      </div>
+      <div class="converter-wrapper">
+        <input id="value-to-convert" type="text" size="3" placeholder="1"
+          oninput="this.setAttribute('size',this.value.length||=1)">
+        <p id="error-message"></p>
+        <button id="convert-btn">Convert</button>
+      </div>
+    </div>
 
-    <input id="value-to-convert" type="text" size="5" oninput="this.setAttribute('size',this.value.length||=1)">
+    <div class="bottom-half">
+      <div class="measurement-box">
+        <p class="unit-type">Length (Feet/Meters)</p>
+        <div class="output" id="length-el"></div>
+      </div>
 
-    <button id="convert-btn">Convert</button>
+      <div class="measurement-box">
+        <p class="unit-type">Volume (Gallons/Liters)</p>
+        <div class="output" id="volume-el"></div>
+      </div>
+
+      <div class="measurement-box">
+        <p class="unit-type">Mass (Pounds/Kilograms)</p>
+        <div class="output" id="mass-el"></div>
+      </div>
+    </div>
   </div>
-
-  <div class="bottom-half">
-
-    <div class="measurement-box">
-      <p class="unit-type">Length (Feet/Meters)</p>
-      <div class="output" id="length-el"></div>
-    </div>
-
-    <div class="measurement-box">
-      <p class="unit-type">Volume (Gallons/Liters)</p>
-      <div class="output" id="volume-el"></div>
-    </div>
-
-    <div class="measurement-box">
-      <p class="unit-type">Mass (Pounds/Kilograms)</p>
-      <div class="output" id="mass-el"></div>
-    </div>
-  </div>
-  </label>
   <script src="index.js" async defer></script>
 </body>
 
