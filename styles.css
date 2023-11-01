@@ -172,27 +172,91 @@ p {
 /* #region */
 
 /* narrower phones */
+/* #region */
 @media only screen and (max-width: 399px) {
   html {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .top-half {
-    min-height: 300px;
+    min-height: 285px;
   }
 
-  h1 {
-    font-size: 3rem;
+   h1 {
+    font-size: 3.1rem;
   }
 
+  /* h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+ */
+  
   .measurement-box {
     max-height: 150px;
     padding-top: 1%;
   }
 }
 
-    width: 80%;
+/* #endregion */
+
+/* Tablets - looks ok on ipads but kindle fire & nexus 10 look really stretched. Not worrying about those. */
+/* #region */
+@media only screen and (min-width:650px) and (max-width: 949px) {
+  html {
+    font-size: 18px;
   }
+
+  .top-half {
+    min-height: 490px;
+    height:39%;
+  max-height: 600px;  }
+
+  h1 {
+    font-size: 3.8rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    margin-top: -1.1rem;   /* necessary */
+  }
+
+  h3 {
+    font-size: 2.1rem;
+    /* margin-top: .3rem; */
+  }
+
+  h4 {
+    font-size: 2.4rem;
+  }
+
+  .converter-wrapper {
+    padding-top: .5rem;
+  }
+
+  #convert-btn {
+    font-size: 1.1rem;
+  }
+
+    .bottom-half {
+    flex: 1;
+    padding-top: 0;
+    padding-bottom: .3rem;
+    /* gap: 1rem; */
+  }
+
+  .measurement-box {
+    width: 96%;
+    padding-top: 1.5%;
+    min-height: 154px;
+  }
+
+  .output {
+    padding: .65%;
+
 }
 
 /* #endregion */
