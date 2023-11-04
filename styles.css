@@ -8,12 +8,11 @@ body {
   background: #303030;
   text-align: center;
   margin: 0;
-  background-image: linear-gradient(
-    to right top, 
-    #f00a8c, #e10097, #ce00a2, #b700ad, 
-    #9b00b8, #8c00c1, #7808ca, #5d13d3, 
-    #541cdd, #4723e7, #332af2, #0231fc);
-background-attachment: fixed
+  background-image: linear-gradient(to right top,
+      #f00a8c, #e10097, #ce00a2, #b700ad,
+      #9b00b8, #8c00c1, #7808ca, #5d13d3,
+      #541cdd, #4723e7, #332af2, #0231fc);
+  background-attachment: fixed
 }
 
 div.container {
@@ -80,9 +79,9 @@ p {
   font-size: 3rem;
   font-weight: 600;
   max-width: 94%;
-  border-radius: 7px;
+  border-radius: 6px;
   border: 2px solid #ffffff;
-  padding: 7x 10px;
+  padding: 6px 10px;
   margin-bottom: .3rem;
 }
 
@@ -93,7 +92,7 @@ p {
   font-size: 1rem;
   font-weight: 600;
   border: 1px solid #ffffff;
-  border-radius: 4px;
+  border-radius: 6px;
   margin: .3rem auto 0 auto;
   padding: .34rem 5%;
   box-shadow: 2px 2px 1px 1px #4f505073;
@@ -139,14 +138,14 @@ p {
   height: 31%;
   box-sizing: border-box;
   min-height: 110px;
-  padding: 3% 0 2% 0;
+  padding: 2% 0;
   justify-content: center;
 }
 
 .unit-type {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
 }
 
 .output {
@@ -205,12 +204,12 @@ p {
   }
 
   .measurement-box {
-    padding: 3% 0 1% 0;
+    padding: 2.3% 0 1% 0;
   }
 
   .unit-type {
     font-size: 1.5rem;
-    ;
+    padding-bottom: 1.5%;
   }
 
   .output {
@@ -289,98 +288,97 @@ p {
 @media only screen and (min-width: 995px) {
   html {
     font-size: 18px;
+  }
 
-    body {
-      margin: 3rem 0;
-      background-image: unset;
-    }
+  body {
+    margin: 3rem 0;
+    background-image: unset;
+  }
 
-    div.container {
-      flex-direction: row;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      width: 86%;
-      background-image: linear-gradient(
-        to right top, 
-        #f00a8c, #e10097, #ce00a2, #b700ad, 
-        #9b00b8, #8c00c1, #7808ca, #5d13d3, 
+  div.container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 86%;
+    background-image: linear-gradient(to right top,
+        #f00a8c, #e10097, #ce00a2, #b700ad,
+        #9b00b8, #8c00c1, #7808ca, #5d13d3,
         #541cdd, #4723e7, #332af2, #0231fc);
-      background-attachment: fixed;
-      height: 100%;
-      min-height: 550px;
-      max-height: 600px;
-      border: 2px solid 111111;
-      padding: 5.5vh 5%;
-      /* padding: 1.5rem; */
-      margin: auto;
-    }
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 550px;
+    max-height: 600px;
+    border: 2px solid 111111;
+    padding: 3vh 2%;
+    /* padding: 1.5rem; */
+    margin: auto;
+  }
 
-    .top-half {
-      justify-content: space-between;
-      min-width: 550px;
-      max-width: fit-content;
-      max-width: 60%;
-      height: 70vh;
-      min-height: 550px;
-      max-height: 550px;
-      border: 8px double #111111;
-      border-right: none;
-      box-sizing: border-box;
-      padding: 2.5vh .4rem 2.3vh .15rem;
-      margin: 0;
-    }
+  .top-half {
+    justify-content: space-between;
+    min-width: 550px;
+    max-width: fit-content;
+    max-width: 60%;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 550px;
+    border: 6px double #111111;
+    border-right: none;
+    /* border-radius:6px 0 0 6px; */
+    box-sizing: border-box;
+    padding: 2.5vh .4rem 2.3vh .15rem;
+    margin: 0;
+  }
 
-    .bottom-half {
-      gap: 0;
-      min-width: 300px;
-      padding: 0;
-      border-top: 8px double #111111;
-      border-right: 8px double #111111;
-      border-bottom: 8px double #111111;
-      border-left: none;
-    }
+  .bottom-half {
+    gap: 0;
+    min-width: 300px;
+    padding: .5vh .15rem .5vh .4rem;
+    border: 6px double #111111;
+    border-left: none;
+  }
 
-    h1 {
-      font-size: 3.3rem;
-    }
+  h1 {
+    font-size: 3.3rem;
+  }
 
-    h2 {
-      font-size: 2.2rem;
-      margin-top: .15rem;
-    }
+  h2 {
+    font-size: 2.4rem;
+    margin-top: .15rem;
+  }
 
-    h3 {
-      font-size: 1.9rem;
-    }
+  h3 {
+    font-size: 2.1rem;
+  }
 
-    h4 {
-      font-size: 2rem;
-      margin-top: .3rem;
-      line-height: 1.1;
-    }
+  h4 {
+    font-size: 2.3rem;
+    margin-top: .4rem;
+    line-height: 1.1;
+  }
 
-    #convert-btn {
-      font-size: 1rem;
-      margin: .4rem;
-    }
+  #value-to-convert {
+    padding: 10px 10px;
+    margin-bottom: .1rem;
+  }
 
-    #value-to-convert {
-      margin-bottom: .1rem;
-    }
+  #convert-btn {
+    font-size: 1rem;
+    margin: .4rem;
+  }
 
-    div.measurement-box {
-      height: 29%;
-      width: 97.5%;
-      padding-top: 2.5%;
-    }
+  div.measurement-box {
+    height: 31.5%;
+    width: 97.5%;
+    padding-top: 2.5%;
+  }
 
-    .unit-type {
-      font-size: 1.2rem;
-    }
+  .unit-type {
+    font-size: 1.2rem;
+  }
 
-    .output {
-      font-size: 1rem;
-      line-height: 1.35;
-    }
+  .output {
+    font-size: 1rem;
+    line-height: 1.35;
   }
 }
