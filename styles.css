@@ -1,12 +1,3 @@
-/* COLORS
-off-white: #f5f5f5
-background white: #e7e6e6
-black text: #111111 
-subheading (purply-grey): #483b82
-purple background: #6943FF 
-purple border: B295FF
-*/
-
 html {
   font-family: Rubik, Verdana, Geneva, Tahoma, sans-serif;
   font-size: 17px;
@@ -14,13 +5,15 @@ html {
 
 body {
   color: #f5f5f5;
-  background: #323232;
+  background: #303030;
   text-align: center;
   margin: 0;
-  background-image: linear-gradient(to right top,
-      #f00a8c, #e10097, #ce00a2, #b700ad, #9b00b8, #8c00c1,
-      #7808ca, #5d13d3, #541cdd, #4723e7, #332af2, #0231fc);
-  background-attachment: fixed
+  background-image: linear-gradient(
+    to right top, 
+    #f00a8c, #e10097, #ce00a2, #b700ad, 
+    #9b00b8, #8c00c1, #7808ca, #5d13d3, 
+    #541cdd, #4723e7, #332af2, #0231fc);
+background-attachment: fixed
 }
 
 div.container {
@@ -32,12 +25,11 @@ div.container {
 .top-half {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: .7rem;
   align-items: center;
-  padding: 1rem 0 1rem 0;
-  min-height: 355px;
-  /* is this needed? should it just be height and not do a min max thing? not */
-  /* max-height:50%; */
+  min-height: 330px;
+  padding: .7rem 0 .4rem 0
 }
 
 h1,
@@ -59,20 +51,17 @@ h1 {
 h2 {
   font-size: 2.1rem;
   font-weight: 600;
-  margin-top: 0;
+  margin-top: -.2rem;
 }
 
 h3 {
-  font-size: 1.7rem;
-  font-weight: 600;
-  margin-top: 1rem;
+  font-size: 1.65rem;
   font-weight: 600;
 }
 
 h4 {
   font-size: 1.9rem;
-  line-height: 1;
-  margin-top: .3rem;
+  line-height: 1.05;
 }
 
 p {
@@ -80,8 +69,8 @@ p {
 }
 
 .converter-wrapper {
-  margin: auto;
   width: 96%;
+  padding-top: .15rem;
 }
 
 #value-to-convert {
@@ -89,23 +78,24 @@ p {
   background: #111111;
   text-align: center;
   font-size: 3rem;
-  border-radius: 4px;
+  font-weight: 600;
+  max-width: 94%;
+  border-radius: 7px;
   border: 2px solid #ffffff;
-  padding: .75% 0;
-  margin: 1.2rem 0 0 0;
-  max-width: 98%;
-
+  padding: 7x 10px;
+  margin-bottom: .3rem;
 }
+
 #convert-btn {
   color: #f5f5f5;
   background: #111111;
   font-family: inherit;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   margin: .3rem auto 0 auto;
-  padding: .6rem 5%;
+  padding: .34rem 5%;
   box-shadow: 2px 2px 1px 1px #4f505073;
 }
 
@@ -126,21 +116,19 @@ p {
   color: #97e4f7;
   font-size: 1rem;
   text-shadow: 1px 1px 1px #000;
-  margin-top: .35rem;
-
+  /* margin: .15rem 0 0 0; */
 }
 
 .bottom-half {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: .7rem;
-  padding: .5rem 0 1rem 0;
-  margin: 0;
-  height: auto;
   position: relative;
   flex: 1;
+  justify-content: space-evenly;
+  align-items: center;
+  height: auto;
+  /* padding: .2rem 0; */
+  margin: 0;
 }
 
 .measurement-box {
@@ -148,10 +136,10 @@ p {
   flex-direction: column;
   background: #111111;
   width: 94%;
-  max-width: 520px;
-  height: 28%;
+  height: 31%;
+  box-sizing: border-box;
   min-height: 110px;
-  padding: 3% 0 0 0;
+  padding: 3% 0 2% 0;
   justify-content: center;
 }
 
@@ -164,88 +152,121 @@ p {
 .output {
   font-size: 1.2rem;
   line-height: 1.5;
-  padding: 1%;
   margin: 0;
 }
 
-/* media queries */
-/* #region */
+/*//////// media queries /////////*/
 
-/* narrower phones */
-/* #region */
+/* ---------------- Narrower phones ---------------- */
 @media only screen and (max-width: 399px) {
   html {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .top-half {
-    min-height: 285px;
+    min-height: 270px;
+    padding-top: 1.5vh;
+    box-sizing: border-box;
   }
 
-   h1 {
-    font-size: 3.1rem;
+  h1 {
+    font-size: 2.98rem;
   }
 
-  /* h2 {
-    font-size: 2rem;
+  h2 {
+    font-size: 2.3rem;
   }
 
   h3 {
     font-size: 1.6rem;
-  }
- */
-  
-  .measurement-box {
-    max-height: 150px;
-    padding-top: 1%;
-  }
-}
-
-/* #endregion */
-
-/* Tablets - looks ok on ipads but kindle fire & nexus 10 look really stretched. Not worrying about those. */
-/* #region */
-@media only screen and (min-width:650px) and (max-width: 949px) {
-  html {
-    font-size: 18px;
-  }
-
-  .top-half {
-    min-height: 490px;
-    height:39%;
-  max-height: 600px;  }
-
-  h1 {
-    font-size: 3.8rem;
-  }
-
-  h2 {
-    font-size: 2.8rem;
-    margin-top: -1.1rem;   /* necessary */
-  }
-
-  h3 {
-    font-size: 2.1rem;
-    /* margin-top: .3rem; */
+    font-weight: 600;
   }
 
   h4 {
-    font-size: 2.4rem;
+    font-size: 1.9rem;
+    line-height: 1.05;
+    padding-top: .34rem;
+  }
+
+  #value-to-convert {
+    font-size: 2.6rem;
+    padding: 5px 10px;
+    margin-bottom: .35rem;
+  }
+
+  #error-message {
+    font-size: .95rem;
+  }
+
+  #convert-btn {
+    border-width: 1px;
+    font-size: 1.05rem;
+    padding: .3rem 4%;
+  }
+
+  .measurement-box {
+    padding: 3% 0 1% 0;
+  }
+
+  .unit-type {
+    font-size: 1.5rem;
+    ;
+  }
+
+  .output {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------------- Tablets ---------------- */
+@media only screen and (min-width:650px) and (max-width: 996px) {
+  html {
+    font-size: 19px;
+  }
+
+  .top-half {
+    min-height: 475px;
+    /* height: 37%; */
+    max-height: 600px;
+    padding-top: 1.5rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2.15rem;
+  }
+
+  h4 {
+    font-size: 2.2rem;
+    margin-top: .2rem;
   }
 
   .converter-wrapper {
-    padding-top: .5rem;
+    padding-top: .6rem;
+  }
+
+  #value-to-convert {
+    font-size: 3.1rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: .25rem;
   }
 
   #convert-btn {
     font-size: 1.1rem;
   }
 
-    .bottom-half {
+  .bottom-half {
     flex: 1;
     padding-top: 0;
     padding-bottom: .3rem;
-    /* gap: 1rem; */
   }
 
   .measurement-box {
@@ -254,77 +275,112 @@ p {
     min-height: 154px;
   }
 
+  .unit-type {
+    font-size: 1.5rem;
+  }
+
   .output {
-    padding: .65%;
-
-}
-
-/* #endregion */
-
-/* #region*/
-/* wide (unfinished) */
-@media only screen and (min-width: 900px) {
-  html {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
-
-  body {
-    margin: .8rem;
-  }
-
-  .container {
-    display: flex;
-    flex-direction: row;
-    max-width: 1200px;
-    /* justify-content: space-between; */
-    gap: 1rem;
-    align-items: start;
-  }
-
-  .top-half {
-    width: 46%;
-    max-width: 5750px;
-    min-height: 50vh;
-    max-height: 55vh;
-  }
-
-  .bottom-half {
-    max-width: 550px;
-    width: 51%;
-    margin-top: 1rem;
-  }
-
-  h1 {
-    font-size: 2.8rem;
-  }
-
-  h2 {
-    font-size: 2.2rem;
-    margin-top: 0;
-  }
-
-  h4 {
-    font-size: 2.2rem;
-    margin-top: -.2rem;
-  }
-
-  #value-to-convert {
-    font-size: 3.5rem;
-    padding: .8rem;
-  }
-
-  button {
-    margin-top: 0;
     font-size: 1.3rem;
-  }
-
-  div.measurement-box {
-    height: 30%;
+    line-height: 1.4;
   }
 }
 
-/* #endregion */
+/* ---------------- Laptops ---------------- */
+@media only screen and (min-width: 995px) {
+  html {
+    font-size: 18px;
+
+    body {
+      margin: 3rem 0;
+      background-image: unset;
+    }
+
+    div.container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      width: 86%;
+      background-image: linear-gradient(
+        to right top, 
+        #f00a8c, #e10097, #ce00a2, #b700ad, 
+        #9b00b8, #8c00c1, #7808ca, #5d13d3, 
+        #541cdd, #4723e7, #332af2, #0231fc);
+      background-attachment: fixed;
+      height: 100%;
+      min-height: 550px;
+      max-height: 600px;
+      border: 2px solid 111111;
+      padding: 5.5vh 5%;
+      /* padding: 1.5rem; */
+      margin: auto;
+    }
+
+    .top-half {
+      justify-content: space-between;
+      min-width: 550px;
+      max-width: fit-content;
+      max-width: 60%;
+      height: 70vh;
+      min-height: 550px;
+      max-height: 550px;
+      border: 8px double #111111;
+      border-right: none;
+      box-sizing: border-box;
+      padding: 2.5vh .4rem 2.3vh .15rem;
+      margin: 0;
+    }
+
+    .bottom-half {
+      gap: 0;
+      min-width: 300px;
+      padding: 0;
+      border-top: 8px double #111111;
+      border-right: 8px double #111111;
+      border-bottom: 8px double #111111;
+      border-left: none;
+    }
+
+    h1 {
+      font-size: 3.3rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-top: .15rem;
+    }
+
+    h3 {
+      font-size: 1.9rem;
+    }
+
+    h4 {
+      font-size: 2rem;
+      margin-top: .3rem;
+      line-height: 1.1;
+    }
+
+    #convert-btn {
+      font-size: 1rem;
+      margin: .4rem;
+    }
+
+    #value-to-convert {
+      margin-bottom: .1rem;
+    }
+
+    div.measurement-box {
+      height: 29%;
+      width: 97.5%;
+      padding-top: 2.5%;
+    }
+
+    .unit-type {
+      font-size: 1.2rem;
+    }
+
+    .output {
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+  }
+}
